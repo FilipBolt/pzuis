@@ -1,38 +1,32 @@
-\documentclass[times, utf8, seminar]{fer}
+\documentclass[times, utf8, seminar]{fer} 
 \usepackage{booktabs}
+
 \begin{document}
-% TODO: Navedite naslov rada.
-\title{Prikaz argumenata u informacijskim sustavima}
 
-% TODO: Navedite vaše ime i prezime.
-\author{Filip Boltužić}
-
-% TODO: Navedite ime i prezime mentora.
-\voditelj{Prof. dr. sc. Nikola Bogunović}
-
+% \title{Prikaz argumenata u informacijskim sustavima}
+% 
+\author{Student: Filip Boltužić}
+% 
+\voditelj{Prof.\ dr.\ sc. Nikola Bogunović}
+ 
 \maketitle
-
+ 
 \tableofcontents
+ 
+\chapter{Uvod} \input{./01_uvod.tex}
+ 
+\chapter{Argument} \input{./02_argument.tex}
+ 
+\chapter{Argumentacijski sustavi} \input{./04_sustavi.tex}
 
-\chapter{Uvod}
-\input{./01_uvod.tex}
+I wish \citep{chesnevar2006towards} we all could be california.
 
-\chapter{Argument}
-\input{./02_argument.tex}
+\chapter{Zaključak} Zaključak.
 
-\chapter{Dijagrami argumenata}
-\input{./03_dijagram_argument.tex}
+Zakljucak. 
 
-\chapter{Argumentacijski sustavi}
-\input{./04_sustavi.tex}
+\bibliography{literatura} \bibliographystyle{fer}
 
-\chapter{Zaključak}
-Zaključak.
-
-\bibliography{literatura}
-\bibliographystyle{fer}
-
-\chapter{Sažetak}
-Sažetak.
+\chapter{Sažetak} Sažetak.
 
 \end{document}
