@@ -1,0 +1,76 @@
+Čitav niz alata za argumentaciju, kao što su Araucaria, Rationale ili Carnedeas
+koriste vlastite formate za označavanje argumentacije u tekstu. Kako bi se
+objedinio način razmjene argumenata između ljudi, ali ponajprije između
+računalnih agenata, 2005. nastao je prvi prijedlog za AIF \engl{Argument
+Interchange Format} jezikom. Baziran na dobro poznatom RDF jeziku, ideja AIF-a
+je bila ponuditi dovoljnu ekspresivnost kojom bi se obuhvatile sve
+općeprihvaćene teorije argumentacije. Začetak AIF-a se smatra prvim korakom
+prema ostvarivanju Argument Web-a. 
+
+Prije AIF-a bilo je nekoliko pokušaja stvaranja zajedničkog jezika, ponajprije
+Araucarin AML \engl{Argument Markup Language}. AML, baziran na XML-u
+\engl{Extensible Markup Language} osmišljen je za označavanje i analizu
+argumentacije u prirodnom jeziku. Sintaksa AML jezika specificirana je pomoću
+DTD \engl{Document Type Definition} strukturalnih ograničenja.  
+
+Standardizacija definiranja računalnog jezika bila je nužna zbog tri glavna razloga:
+\begin{enumerate}
+    \item razmjena dokumenata kroz različite programske agente (primjerice 
+korištenje dokumente kreiranog u Araucarii u Compendiumu i obratno), 
+    \item kompatiblinost argumentacijskih shema u različitim programskim agentima
+(primjerice, Araucaria koristi Toulminovu shemu, dok Compendium samo poznaje 
+Waltonove argumentacijske sheme) te 
+    \item potrebe da se automatski procesiraju logičke izjave
+\end{enumerate}
+
+\section{Specifikacija AIF-a}
+
+AIF odlikuju 
+\begin{enumerate}
+    \item sintaksa razumljiva programskim agentima,
+    \item eksplicitna semantika,
+    \item koncepti i proširenja 
+    \item objedinjen apstraktni model koncepata i relacija između
+koncepata
+\end{enumerate}
+
+\subsection{Koncepti i relacije}
+
+Objekti argumentacije predstavljaju se kao skup čvorova povezanih usmjerenim grafom. 
+Neformalno se takav usmjereni graf u kontekstu argumentacije naziva
+argumentativnom mrežom \engl{argument network} AN\@. Ne 
+postoje nikakva ograničenja na oblik grafa koji može poprimiti AN.
+
+\subsection{Čvorovi}
+
+Razlikujemo dvije osnovne vrste čvorova: informacijske čvorove
+\engl{information nodes} I-čvorove i shematske \engl{scheme nodes} S-čvorove.
+I-čvorovi predstavljaju sadržaj izjava i čvrsto su povezani s temom
+argumentativne rasprave, S-čvorovi predstavljaju primjenu obrazaca u
+argumentiranju i smatraju se neovisnim o argumentativnoj raspravi. Postoje tri
+osnovna tipa obrasca u argumentiranju: posljedica \engl{inference},
+preferiranje \engl{preference} i sukob \engl{conflict}. Primjena sheme
+radi se kroz S-čvor koji sukladno vrstama obrazaca u argumentiranju može biti
+čvor primjene logičke posljedice \engl{inference application node} (RA-čvor), 
+čvor primjene preferiranja \engl{preference application node} (PA-čvor) te
+čvor primjene sukoba \engl{conflict application node} (CA-čvor).
+
+\subsection{Bridovi}
+
+Čvorovi su povezani usmjerenim bridovima. Kažemo da brid povezuje čvorove A i B
+tako da ide iz početnog čvora A u odredišni čvor B. Razlikujemo shematske i podatkovne
+bridove. Početne točke shematskih bridova su S-čvorovi, dok su početne točke 
+podatkovnih bridova I-čvorovi. Primjerice, čvorovi A i B su povezani usmjerenim bridom 
+$A \rightarrow B$. Ukoliko je čvor A početna točka tipa
+S-čvor primjene logičke posljedice RA-čvor onda je čvor B zaključak strukture
+čvora A. Čvor B može biti S-čvor ili I-čvor. Ukoliko je početni čvor I-čvor onda
+odredišni čvor može biti samo S-čvor. 
+Ideja iza toga stoji u principu da nije moguće povezati dvije izjave bez da se
+specifira relacija (S-čvor) između izjava. 
+
+\cite{chesnevar2006towards} navode sve moguće kombinacije S-čvorova i I-čvorova
+sa bridovima uz pripadajuće semantičko značenje u tablici 1. 
+
+\subsection{Primjer AIF}
+
+% Trebam baš napraviti dijagram gdje je netko I-čvor, S-čvor...
