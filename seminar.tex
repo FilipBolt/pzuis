@@ -1,5 +1,40 @@
+\PassOptionsToPackage{inline}{enumitem}
 \documentclass[times, utf8, seminar]{fer} 
 \usepackage{booktabs}
+\usepackage{tikz} 
+\usepackage{calc}
+\usepackage{textcomp}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains}
+\usetikzlibrary{calc}
+
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\usepackage{listings}
+\usepackage{gb4e}
+
+\lstset{basicstyle=\small,
+columns=fullflexible,
+showstringspaces=false,
+commentstyle=\color{gray}\upshape,
+extendedchars=true,
+literate={ž}{{\v{z}}}1,
+inputencoding=utf8,
+upquote=true
+}
+
+\lstdefinelanguage{XML}{morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={rdfs:comment,rdf:type}% list your attributes here
+}
+
+\noautomath
 
 \begin{document}
 
@@ -19,11 +54,19 @@
 \chapter{Argument} 
 \input{./02_argument.tex}
  
-\chapter{Argumentacijski sustavi} 
+\section{Računalna argumentacija} 
+\label{chap:rac_arg}
 \input{./04_sustavi.tex}
 
-\chapter{AIF}
+\chapter{Predstavljanje argumentacije}
+\label{chap:aif}
 \input{./aif.tex}
+
+\chapter{Analiza argumentacije}
+\input{./analiza.tex}
+
+\chapter{Evaluacija argumentacije}
+\input{./evaluacija.tex}
 
 \chapter{Zaključak} Zaključak.
 

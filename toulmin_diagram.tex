@@ -1,0 +1,60 @@
+\begin{figure}
+\centering
+\begin{tikzpicture}
+[node distance = 1cm, auto,font=\footnotesize,
+% STYLES
+every node/.style={node distance=3cm},
+% The comment style is used to describe the characteristics of each force
+comment/.style={rectangle, inner sep= 5pt, text width=4cm, node distance=0.25cm, font=\scriptsize\sffamily},
+% The force style is used to draw the forces' name
+force/.style={rectangle, draw, fill=black!10, inner sep=5pt, text badly centered, minimum height=1.2cm, font=\bfseries\footnotesize\sffamily}] 
+
+% glavni dijelovi argumenta
+
+\node [force] (claim) {Tvrdnja};
+
+\node [force, left=4 cm of claim] (data) {Podatak};
+
+\node [force, below of=data, xshift=2cm] (warrant) {Razlog};
+
+% \node [force, right=2.5cm of claim] (rebuttal) {Pobijanje};
+
+\node [force, below of=claim] (qualifier) {Kvalifikator};
+
+\node [force, below of=warrant] (backing) {Pozadina};
+
+\node [force, right=1.5 cm of claim] (rebuttal) {Pobijanje};
+
+% komentari
+
+\node [comment, above=0cm of claim] (claim-text) {Student Ivo bi trebao položiti PZUIS.};
+
+\node [comment, above=0cm of data] (data-text) {Student Ivo je predao seminar iz PZUIS-a. };
+
+\node [comment, left=0cm of warrant] (warrant-text) {Student Ivo je poslao mailom 
+završeni seminarski rad iz PZUIS-a}; 
+
+\node [comment, left=0cm of backing] (backing-text) {Predaja seminara je uvjet za polaganje predmeta. };
+
+% \node [comment, below=0cm of rebuttal] (rebuttal-text) {Student Ivo nije ispunio obveze PZUIS-a na vrijeme. };
+
+\node [comment, below=0cm of qualifier] (qualifier-text) {Većina studenata koja ispuni obveze prođe PZUIS. };
+
+\node [comment, below=0cm of rebuttal] (rebuttal-text) {Student Ivo nije ispravno upisao PZUIS. };
+
+% Draw the links between forces
+\path[->,thick] 
+ % (rebuttal) edge (claim)
+ (data) edge (claim)
+ (backing) edge (warrant)
+ (qualifier) edge (claim)
+ (rebuttal) edge (claim)
+ ;
+
+\path [->,draw,thick] 
+(warrant) -- ($ (data)!.35! (claim) $);
+
+\end{tikzpicture} 
+\caption{Toulminov primjer kvalitetnog argumenta}
+\label{fig:Toulmin}
+\end{figure}

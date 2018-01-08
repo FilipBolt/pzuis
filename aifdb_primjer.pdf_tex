@@ -1,0 +1,80 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'aifdb_primjer.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{601bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.57903494)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{aifdb_primjer.pdf}}%
+    \put(0.51164725,0.03577371){\makebox(0,0)[b]{\smash{semesterisation is a good idea}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{aifdb_primjer.pdf}}%
+    \put(0.13394343,0.27537438){\makebox(0,0)[b]{\smash{should be avoided at all costs}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{aifdb_primjer.pdf}}%
+    \put(0.20549085,0.15557404){\makebox(0,0)[b]{\smash{CA}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{aifdb_primjer.pdf}}%
+    \put(0.13394343,0.54991681){\makebox(0,0)[b]{\smash{semesterisation is going to}}}%
+    \put(0.13394343,0.5266223){\makebox(0,0)[b]{\smash{involve an enormous amount of}}}%
+    \put(0.13394343,0.50332779){\makebox(0,0)[b]{\smash{work}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{aifdb_primjer.pdf}}%
+    \put(0.13394343,0.39517471){\makebox(0,0)[b]{\smash{RA}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{aifdb_primjer.pdf}}%
+    \put(0.3968386,0.27537438){\makebox(0,0)[b]{\smash{more flexibility for students}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{aifdb_primjer.pdf}}%
+    \put(0.42512479,0.15557404){\makebox(0,0)[b]{\smash{RA}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{aifdb_primjer.pdf}}%
+    \put(0.6281198,0.28702163){\makebox(0,0)[b]{\smash{administration for the}}}%
+    \put(0.6281198,0.26372712){\makebox(0,0)[b]{\smash{university}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{aifdb_primjer.pdf}}%
+    \put(0.59983361,0.15557404){\makebox(0,0)[b]{\smash{RA}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{aifdb_primjer.pdf}}%
+    \put(0.86938436,0.28702163){\makebox(0,0)[b]{\smash{semesterisation would lead to}}}%
+    \put(0.86938436,0.26372712){\makebox(0,0)[b]{\smash{a reduced workload for staff}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{aifdb_primjer.pdf}}%
+    \put(0.83610649,0.15557404){\makebox(0,0)[b]{\smash{RA}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{aifdb_primjer.pdf}}%
+  \end{picture}%
+\endgroup%

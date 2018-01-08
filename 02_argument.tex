@@ -1,64 +1,208 @@
-Argument je skup premisa i dokaza koje podupiru neki sud. Sud je propozicija
-ili tvrdnja \engl{claim} kojoj se pridjeljuje istinosna vrijednost
-(\emph{istina} ili \emph{laž}). Sudovima i zaključivanjem se bavi logika.
-\citep{vukovic2007matematicka}. Sudovi se donose (dodjeljuje im se istinosna
-vrijednost) na temelju argumenata i procesa argumentiranja.  
+\textbf{Argument} je sredstvo razrješavanja sukoba oko kontroverzne izjave 
+\engl{claim} \citep{walton1990reasoning} između dva ili više sudionika.
+Sastoji se od je jedne ili više pretpostavki ili \textbf{premise} \engl{premise}
+i \textbf{zaključka} \engl{conclusion} koji logički slijedi iz pretpostavki kroz
+\textbf{postupak zaključivanja} \engl{reasoning}. 
+Središnji dio argumenta je zaključak, koji se smatra
+kontroveznom izjavom ili tvrdnjom, a cilj svakog sudionika je
+uvjeriti ostale kako je njegov argument ispravan \citep{walton1990reasoning}. 
+Premise (pretpostavke) obrazlažu \engl{justify}  
+tvrdnju argumenta~\citep{besnard2008elements}. 
+Primjerice, argument $A$ sadrži rečenice: 
 
-Argumentiranje je verbalna i društvena aktivnost s ciljem jačanja (ili
-osporavanja) diskutabilnog stajališta. Sredstvo argumentiranja su prijedlozi
-ili propozicije \engl{propositions} koji opravdavaju ili opovrgavaju stajalište
-nepristranom sucu s mogućnošću nepristranog racionalnog prosuđivanja
-\citep{rahwan2006representing}. Argumentiranje se često proučava u sklopu
-analize diskursa kao specifičan oblik razgovora \citep{palau2009argumentation}.
-Prema teoriji iz \citep{van2003systematic} argumentiranje je uvijek dio
-dijaloga u kojem jedna strana pokušava uvjeriti drugu u ispravnost svojih
-stajališta. Dijalog ili tekst u kojem autor iznosi svoja stajališta s
-pretpostavkom da očekuje protuargumente, kritike ili sumnje se smatra slobodnim
-\engl{free text}. 
+\begin{exe}
+    \ex\label{ex1} student Ivo je uspješno predao seminar iz predmeta 
+    \textit{Predstavljanje znanja u skupovima podataka},
+    \ex\label{ex2} svaki student koji uspješno preda seminar iz predmeta 
+    \textit{Predstavljanje znanja u skupovima podataka} je položio predmet 
+    \textit{Predstavljanje znanja u skupovima podataka}, i
+    \ex\label{ex3} student Ivo je položio predmet 
+    \textit{Predstavljanje znanja u skupovima podataka}. 
+\end{exe} 
+gdje su (\ref{ex1}) i (\ref{ex2}) premise argumenta $A$ iz kojih slijedi tvrdnja (\ref{ex3}).
 
-Teorija argumenta i argumentiranja vrlo je vjerno preslikana u pravnom sustavu.
-Prilikom odlučivanja o nekom diskutabilnoj temi, suprotstavljene teme iznose
-svoje argumente vezane uz temu. Iznesene argumente evaluira racionalan i
-nepristran sudac te donosi odluku kojom se rješava diskutabilnost teme.
-Jednostavan primjer primjene argumentiranja u sudstvu bi bio spor oko
-vlasništva zemlje između susjeda. Svaki od susjeda tvrdi da mu pripada
-vlasništvo nad istim posjedom. Dakle, sudovi izgledaju:
+\cite{toulmin1974uses}, vrlo utjecajni filozof i retoričar 20.\ stoljeća, definirao je 
+strukturu onoga što smatra kvalitetnim argumentom. 
+Specijalizirao je uloge premisa i tvrdnji tako što je definirao: 
+\begin{enumerate}
+    \item \textbf{tvrdnju} \engl{claim}: središnju izjavu argumenta,
+    \item \textbf{podatke} \engl{data}: činjenice i dokaze argumenta,
+    \item \textbf{razlog} \engl{warrant}: logičku vezu između tvrdnje i podataka,
+    \item \textbf{pozadinu} \engl{backing}: izjave koje podupiru razlog,
+    \item \textbf{kvalifikator} \engl{qualifier}: uvjet istinitosti tvrdnje ili snaga tvrdnje, i
+    \item \textbf{pobijanje} \engl{rebuttal}: izjave koje ističu uvjete pod kojima argument nije istinit.
+\end{enumerate}
+Elementi Toulminovog argumenta i njihovi međuodnosi prikazani su na slici~\ref{fig:Toulmin}.  
+\input{./toulmin_diagram.tex} Zbog svoje jednostavnosti, ali i 
+lake mogućnosti primjene na stvarne argumentativne rasprave, 
+Toulminovom strukturom argumenta najčešće se
+modelira argumentacija u području umjetne inteligencije.
 
-\begin{itemize} 
-    \item Susjed A tvrdi da mu pripada posjed X.  
-    \item Susjed B
-tvrdi da mu pripada posjed X.  
-\end{itemize}
+Argumenti se mogu međusobno povezivati, uspoređivati i vrednovati.  Kažemo da
+argument $A$ pobija \engl{rebutts} argument $B$ ukoliko argument $A$ sadrži
+tvrdnju koja je kontradiktorna tvrdnji ili bilo kojoj premisi iz argumenta
+$B$~\citep{besnard2008elements}. Primjer argumenta $B$ u kontradikciji s
+argumentom sa slike~\ref{fig:Toulmin} ima tvrdnju:
+\begin{exe}
+    \ex\label{exb1} student Ivo nije obavio predaju seminara iz PZUIS-a na vrijeme. 
+\end{exe}
+gdje je tvrdnja (\ref{exb1}) iz argumenta $B$ u kontradikciji s premisom (\ref{ex1})
+argumenta sa slike~\ref{fig:Toulmin}. 
 
-Oba suda mogu biti podržana različtim argumentima:
+Argumenti se međusobno povezuju postupcima zaključivanja \engl{reasoning}. 
+Izvođenje zaključaka ili tvrdnji iz premisa može se raditi pod različitim pravilima 
+logike. 
+Tako razlikujemo logiku prvog reda, predikatnu logiku, neformalnu i brojne druge. 
+Neformalna logika \engl{informal logic} formalizira, 
+razvija metode evaluacije i vrednovanja
+argumentacije svakodnevnog razgovora~\citep{fogelin1985logic, blair2000informal}. 
+Upravo se na neformalnu logiku naslanja moderna teorija argumentacije koja primjenjuje 
+neformalnu logiku u kritičkoj analizi debata. Više o logici u odjeljku~\ref{sec:aspic}.
 
-\begin{itemize} 
-    \item Susjed A tvrdi da mu je posjed X pripadao u zadnjih 10 godina.  
-    \item Susjed B tvrdi da mu je posjed X otkupio o drugog vlasnika od susjeda A.  
-\end{itemize}
+\section{Vrste informacija u argumentaciji}
 
-Ispravnost argumentata ocjenjuje sudac (ili porota) nakon čega se oba početna
-suda interpretiraju (dodjeljuje im se logička vrijednost istine ili laži).  
+\cite{besnard2008elements}~razlikuju biti subjektivne, objektivne ili hipotetske informacije u 
+argumentaciji. 
+S obzirom na izrazitost, informacije mogu biti 
+sigurne \engl{certain} i nesigurne \engl{uncertain}. \textbf{Sigurne} (kategoričke)
+informacije smatraju se uvijek istinitima. Primjeri takvih informacije su
+matematičke formule ili zdravorazumske činjenice prema kojima je \emph{Zagreb glavni
+grad Hrvatske}. Također tu pripadaju i informacije čija je vjerojatnost istinitosti 
+izrazito visoka, primjerice: \emph{danas navečer zalazi sunce}. Svaka informacija 
+koja nije sigurna je \textbf{nesigurna} informacija. Stupanj sigurnosti informacije
+ovisi o kontekstu u kojem se procjenjuje, primjerice: \emph{Hrvatska ima jako dobru poljoprivredu},  
+\emph{student Ivo ima 20 godina}, \emph{tipkovnica ima 104 tipke}\dots 
+Postoje još brojne druge dimenzije informacije, kao što
+su neodređenost ili vjerojatnost informacije, o kojima je moguće 
+više pronaći u literaturi posvećenoj formalnom zaključivanju
+\citep{wang2004ontology}. 
+
+\textbf{Subjektivne informacije} ukorjenjene su u mišljenjima, stavovima i vjerovanjima ljudi
+koje ih iznose. Odabir studija za studenta često uključuje procjenu 
+subjektivnih informacija, kao što su \emph{osobni profesionalni interesi}, 
+\emph{težina fakultetskih programa}, \emph{mogućnosti zaposlenja nakon završetka fakulteta}. 
+Ukoliko isti izbor gledamo više sa \textbf{objektivnog stajališta}, tada 
+ćemo se služiti egzaktnim, provjerenim i pouzdanim informacijama, kao što su:
+\emph{90\% ljudi koji završe FER nađu posao u 6 mjeseci nakon diplomiranja}, 
+\emph{prosječno trajanje studiranja na FER-u je 6 godina}\dots \@
+Sadržaj \textbf{hipotetskih informacija} se pretpostavlja i ne ispituje, već služi 
+kao priprema za argumentaciju koja slijedi. Moguće je da 
+hipotetska informacija nije točna, niti će ikad biti, ali pretpostavljanjem njene istinitosti
+istražuju se posljedice hipotetske izjave. 
+Primjerice, \emph{recimo da student Ivo uspješno položi PZUIS, student Ivo
+bi tada položio sve predmete na doktorskom studiju i ispunio jedan od preduvjeta završetka studija.}. 
+Hipotetski dio argumenta \emph{recimo da student Ivo uspješno položi PZUIS}
+služi nam kako bismo pokazali posljedice ostvarivanja istinitosti te informacije,
+ali pritom ne ispitujemo istinitost same hipotetske izjave. 
+
+Je li informacija objektivna, subjektivna ili hipotetska, te koliko je njen 
+stupanj sigurnosti uvelike ovisi o kontekstu \citep{oren2007subjective}.
+U oblikovanju konteksta veliku ulogu ima izvor informacije --- agent.  
+
+\section{Agenti argumentacije}
+
+Agent \engl{agents} je autonoman, proaktivan i nezavistan sustav s određenom
+ulogom u argumentaciji~\citep{besnard2008elements}. 
+Agenti mogu biti sudionici debate, pripadnici porote, liječnici, odvjetnici, ali
+i \textbf{računalni sustavi}. Agenti imaju razne uloge u sklopu argumentacije.  Uloga
+odvjetnika može biti dokazivanje krivnje osumnjičenog kroz argumentaciju.
+Kvalitetu argumentacije odvjetnika evaluiraju agenti --- članovi porote koji
+donose odluku o presudi. S obzirom na broj agenata involviranih u argumentaciju, 
+razlikujemo argumentaciju jednog agenta --- \textbf{monološku argumentaciju}
+\engl{monological argumentation} i više agenata --- \textbf{dijalošku argumentaciju}
+\engl{dialogical argumentation}. 
+
+U \textbf{monološkoj argumentaciji} jedan agent iznosi argumente za i protiv određene tvrdnje. 
+Ukoliko student Ivo piše blog na temu: 
+\emph{Koji fakultet upisati?}, on 
+se može služiti objektivnim informacijama (\emph{90\% ljudi se zapoloslilo nakon što je
+završilo moj faks}), subjektivnim informacijama (\emph{profesori na faksu su
+ljubazni}) ili hipotetskim informacijama (\emph{da sam upisao drugi faks \dots}).
+Izrečene izjave strukturiraju se kroz premise i zaključke te formiraju konačan stav 
+prema temi (\emph{student Ivo je upisao ispravan fakultet}).
+Neki praktični primjeri monološke argumentacije su eseji, blogovi i kritike. 
+
+\textbf{Dijaloška argumentacija} uključuje više od jedne osobe koje 
+argumentiraju za ili protiv zadane teme ili tvrdnje. Agenti mogu imati
+međusobno suprotstavljene stavove, međusobno se uvjeravati \engl{persuade}
+u ispravnost stavova. Rasprava \emph{Koji faks upisati?} može se odvijati 
+putem online foruma gdje student Ivo i ostali studenti 
+sveučilišta uvjeravaju gimnazijalce koji fakultet odabrati.  
+Naglasak u dijaloškoj arugmentaciji je na
+procesu iznošenja argumenata agenata i formiranju konačnih 
+stavova agenata. Neki primjeri dijaloške argumentacije su rasprave odvjetnika
+u sudnici, rasprave u online diskusijama ili pregovaranje cijene 
+automobila.
+
+Bez obzira radi li se o monološkoj ili dijaloškoj argumentaciji, 
+ljudi mogu vrednovati argumentaciju prema 
+brojnim kriterijima, kao što su 
+logička valjanost postupaka zaključivanja, 
+kvaliteta subjektivnih argumenata, 
+pouzdanost objektivnih argumenata. 
+Analizom argumentacije često se bavimo nesvjesno
+samim time uvjerava li nas argumentacija da
+\emph{upišemo FER zbog argumenata studenta Ive},
+\emph{kupimo auto marke BMW zbog njegovih karakteristika}
+ili \emph{glasamo za određenu stranku zbog njihovog
+karizmatičnog čelnika}. 
+
+
+% Argumentiranje je verbalna i društvena aktivnost s ciljem jačanja (ili
+% osporavanja) diskutabilnog stajališta. Sredstvo argumentiranja su prijedlozi
+% ili propozicije \engl{propositions} koji opravdavaju ili opovrgavaju stajalište
+% nepristranom sucu s mogućnošću nepristranog racionalnog prosuđivanja
+% \citep{rahwan2006representing}. Argumentiranje se često proučava u sklopu
+% analize diskursa kao specifičan oblik razgovora \citep{palau2009argumentation}.
+% Prema teoriji iz \citep{van2003systematic} argumentiranje je uvijek dio
+% dijaloga u kojem jedna strana pokušava uvjeriti drugu u ispravnost svojih
+% stajališta. Dijalog ili tekst u kojem autor iznosi svoja stajališta s
+% pretpostavkom da očekuje protuargumente, kritike ili sumnje se smatra slobodnim
+% \engl{free text}. 
+
+% Teorija argumenta i argumentiranja vrlo je vjerno preslikana u pravnom sustavu.
+% Prilikom odlučivanja o nekom diskutabilnoj temi, suprotstavljene teme iznose
+% svoje argumente vezane uz temu. Iznesene argumente evaluira racionalan i
+% nepristran sudac te donosi odluku kojom se rješava diskutabilnost teme.
+% Jednostavan primjer primjene argumentiranja u sudstvu bi bio spor oko
+% vlasništva zemlje između susjeda. Svaki od susjeda tvrdi da mu pripada
+% vlasništvo nad istim posjedom. Dakle, sudovi izgledaju:
+% 
+% \begin{itemize} 
+%     \item Susjed A tvrdi da mu pripada posjed X.  
+%     \item Susjed B
+% tvrdi da mu pripada posjed X.  
+% \end{itemize}
+% 
+% Oba suda mogu biti podržana različtim argumentima:
+% 
+% \begin{itemize} 
+%     \item Susjed A tvrdi da mu je posjed X pripadao u zadnjih 10 godina.  
+%     \item Susjed B tvrdi da mu je posjed X otkupio o drugog vlasnika od susjeda A.  
+% \end{itemize}
+% 
+% Ispravnost argumentata ocjenjuje sudac (ili porota) nakon čega se oba početna
+% suda interpretiraju (dodjeljuje im se logička vrijednost istine ili laži).  
 
 %sada kad sam definirao što je uopće argument (vjerojatno će ići velika
 %redukcija ovog napisanog), idem objasniti kako pronaći argument u tekstu s
 %primjerima
 
-\section{Definicija argumenta}
-
-\input{./02_01_argument_prepoznavanje.tex}
-
-\section{Struktura argumenata} \input{./02_02_argument_struktura.tex}
-
-
-\section{Pretpostavke sustava argumentiranja} Dokazi i argumenti su dva bitno
-različita pojma, pa tako izjave: \emph{P je dokaz da vrijedi T} i \emph{P je
-čvrst argument u korist prihvaćanja teze T} nikako ne mogu biti smatrane
-istovjetnima. Prva izjava pripada području matematička logike
-\engl{mathematical reasoning}. U matematičkoj logici
-\citep{bench2007argumentation}: \begin{itemize} \item ne postoje pojmovi
-    nepotpune ili nesigurne informacije, \item zaključci su konačni, \item
-    kontekst rasuđivanja je strogo definiran i \item sustav odlučivanja nije
-    podložan raspravi te je potpuno objektivan.  \end{itemize} 
-
-Zaključno, cilj argumenta je \textbf{uvjeravanje} \engl{to persuade}.
+% \section{Definicija argumenta}
+% 
+% \input{./02_01_argument_prepoznavanje.tex}
+% 
+% \section{Struktura argumenata} \input{./02_02_argument_struktura.tex}
+% 
+% 
+% \section{Pretpostavke sustava argumentiranja} Dokazi i argumenti su dva bitno
+% različita pojma, pa tako izjave: \emph{P je dokaz da vrijedi T} i \emph{P je
+% čvrst argument u korist prihvaćanja teze T} nikako ne mogu biti smatrane
+% istovjetnima. Prva izjava pripada području matematička logike
+% \engl{mathematical reasoning}. U matematičkoj logici
+% \citep{bench2007argumentation}: \begin{itemize} \item ne postoje pojmovi
+%     nepotpune ili nesigurne informacije, \item zaključci su konačni, \item
+%     kontekst rasuđivanja je strogo definiran i \item sustav odlučivanja nije
+%     podložan raspravi te je potpuno objektivan.  \end{itemize} 
+% 
+% Zaključno, cilj argumenta je \textbf{uvjeravanje} \engl{to persuade}.
