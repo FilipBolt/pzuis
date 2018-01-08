@@ -3,15 +3,14 @@ računalnih alata uvelike pomaže stručnjacima prilikom
 vrednovanja argumentacije. No, ono što intrigira je 
 mogućnost računalne evaluacije argumentacije. 
 Stručnjaci obrazovani u području argumentacije znaju prepoznati
-koje su adekvatne logičke veze između tvrdnji. Tako,  
-stručnjaci koji se bave argumentacijom \emph{neće} reći da iz tvrdnje
+koje su prikladne logičke veze između tvrdnji.   
+Stručnjaci koji se bave argumentacijom \emph{neće} reći da iz tvrdnje
 \emph{Student Ivo danas nije došao na fakultet} slijedi
 tvrdnja \emph{Student Ivo nije položio niti jedan predmet}.
 Povezivanje argumenata logičkim vezama upravo je
 razlog nastanka računalne argumentacije. 
 Automatizacijom izvođenja zaključaka u argumentaciji,
-moguće je doći do novih, neizrečenih tvrdnji, 
-kao i vrednovanja kvalitete argumentacije. 
+moguće je doći do novih, neizrečenih tvrdnji.
 Računalni sustavi za zaključivanje u argumentaciji zovu se 
 \textbf{argumentacijska radna okruženja} \engl{argumentation framework}, \@{AF}.
 
@@ -31,13 +30,13 @@ induktivnim argumentom analogije koji se često koristi u svakodnevnom govoru
 U sklopu razvoja Argument Web-a, razvijeno je nekoliko sustava za
 automatsku evaluaciju argumentacije, kao i argumentativnih radnih okruženja
 zasnovanih na Dungovoj ideji. Najkorištenije argumentacijsko radno okruženje
-je ASPIC okruženje. 
+je \textbf{ASPIC+} okruženje. 
 Prvi računalni sustav, implementacija argumentacijskog radnog okruženja, 
 je \emph{Dung-O-Matic} \citep{snaith2010pipelining},
 no taj sustav nije kompatibilan s ostalim formatima zapisa argumenta. 
 \emph{TOAST} sustav razvijen je s funkcionalnostima Dung-O-Matic-a, ali 
 je kompatibilan s popularnim AIF formatom (poglavlje~\ref{chap:aif}), kao i sa 
-ASPIC argumentacijskim radnim okruženjem. 
+ASPIC+ argumentacijskim radnim okruženjem. 
 Postoje još brojni drugi sustavi kao što su Tweety \citep{thimm2014tweety} koji
 pokušava mapirati AIF strukturu u logički program 
 (slično kao i ASPARTIX \citep{egly2008aspartix}),
@@ -46,7 +45,7 @@ koji koristi poznatu SAT \citep{moskewicz2001chaff}
  tehniku kako bi odredio prihvatljivost argumenta
 u argumentacijskom radnom okruženju.
 
-\section{ASPIC}
+\section{ASPIC+}
 \label{sec:aspic}
 
 $AF$ je par $(A, D)$ gdje je $D \subseteq A \times A$ binarna relacija napada između argumenata $A$. 
@@ -66,9 +65,10 @@ da ne postoje $A \in S, B \in S$ takvi da postoji $(A, B) \in D$ onda:
         $(X, Y) \in D$
 \end{itemize}
 Za $T \in $\{kompletan, preferiran, osnovan, stabilan\}, $X$ je
-\emph{skeptično} opravdan ukoliko $X$ pripada barem jednom $T$ proširenju. 
+\emph{skeptično} opravdan ukoliko $X$ pripada barem jednom $T$ proširenju
+\citep{modgil2014aspic+}. 
 
-Za korištenje ASPIC-a potrebno je odabrati negacijsko-zatvoreni logički jezik $L$,
+Za korištenje ASPIC+-a potrebno je odabrati negacijsko-zatvoreni logički jezik $L$,
 dva skupa strogih \engl{strict} i oborivih \engl{defeasible} pravila
 zaključivanja. 
 Osim pravila, potrebno je specifirati bazu znanju 
@@ -76,7 +76,7 @@ Osim pravila, potrebno je specifirati bazu znanju
 U bazi znanja razlikujemo obične, aksiome, te oborive premise, koje je moguće
 napadati. Baza znanja, pravila zaključivanja i logičkog jezika
 zajedno čine \textbf{argumentacijsku teoriju} \engl{argumentation theory}.
-ASPIC radi nad argumentacijskom teoriju i omogućava upite nad njom. 
+ASPIC+ radi nad argumentacijskom teorijom i omogućava upite nad njom. 
 Nad zadanim argumentom moguće je dobiti premise koje ga čine kroz
 upit $Prem$, zaključak upitom $Conc$, 
 njegove podargumente upitom $Sub$, oboriva pravila argumenta upitom $DefRules$ te
@@ -84,34 +84,34 @@ zadnje pravilo zaključivanja upitom $TopRule$.
 
 \begin{figure}
     \includegraphics[scale=0.6]{aspic.jpg}
-    \caption{Primjer argumenta u ASPIC sustavu}
+    \caption{Primjer argumenta u ASPIC+ sustavu}
 \label{fig:aspic}
 \end{figure}
 
-Baza podataka sadrži se od:
+Primjerice, baza podataka se sadrži od:
 $p, q, r, s, t, u, v, w, x, d_1, d_2, d_3, d_4, d_5, d_6$ i njihovih negacija, gdje 
 je skup strogih pravila $R_s = \{s_1, s_2\}$, a skup oborivih pravila
 $R_d = \{d_1, d_2, d_3, d_4, d_5, d_6\}$. Sama pravila su:
 \begin{align*}
     d_1&: p \Rightarrow q  &   d_4&: u \Rightarrow v   &    s_1&: p, q \rightarrow r \\
     d_2&: s \Rightarrow t  &   d_5&: v, x \Rightarrow \neg t  &    s_2&: v \rightarrow \neg s \\
-    d_3&: t \Rightarrow \neg d_1   & d_6 s \Rightarrow \neg p
+    d_3&: t \Rightarrow \neg d_1  &  & d_6 s \Rightarrow \neg p
 \end{align*}
 Funkcija $n$ pridjeljuje oborivom pravilu $d_i$ formulu $d_i$, dakle vrijedi:
 $n(d_i) = d_i$, prikazano na primjeru: $n(p \Rightarrow q) = d_1$. Ovako definiran argument
 prikazan je slikom~\ref{fig:aspic}, premise su na dnu slike, a zaključak na vrhu. Premise
 su označene eksponentom, a oborive premise i zaključivanja isprekidanom linijom. 
 Sada je i upitima moguće doći do elemenata argumenata $A_1, A_2$ i $A_3$. Tako je
-$Prem(A_3) = \{p\}$, $DefRules(A_3) = \{d_1\}$. Još primjera i pojašnjenja ASPIC
+$Prem(A_3) = \{p\}$, $DefRules(A_3) = \{d_1\}$. Još primjera i pojašnjenja ASPIC+
 radne okoline moguće je pronaći u \citep{modgil2014aspic+}. 
 
 \section{TOAST}
 
-TOAST \engl{The Online Argument Structures Tool} je implementacija ASPIC 
+TOAST \engl{The Online Argument Structures Tool} je implementacija ASPIC+ 
 \citep{modgil2014aspic+} argumentacijskog okruženja. TOAST je web servis 
 u koji je moguće unijeti argumente i evaluirati ih. 
-Korisnik TOAST-a može unositi izjave u bazu znanja \engl{Knowledge base}
-ili definirati vlastita pravila \engl{rules}. U bazi znanja 
+Korisnik TOAST-a može unositi izjave u bazu znanja \engl{knowledge base}
+i definirati vlastita pravila \engl{rules} (prema ASPIC+-u). U bazi znanja 
 razlikujemo aksiome, premise i pretpostavke. Osim standardnih logičkih
 poveznica koje je moguće unositi između tvrdnji u bazi znanja, 
 između premisa i pretpostavki moguće je definirati relacije preferencije. 
@@ -125,10 +125,23 @@ primjerice pravilo s dvije tvrdnje iz kojih logičkom implikacijom slijedi konse
 \begin{lstlisting}[caption={},label={lst:format},language=XML, captionpos=b]
 [p] {Student Ivo studira na FER-u, FER je u Zagrebu}{->}{Student Ivo studira u Zagrebu};
 \end{lstlisting}
-Između pravila možemo unositi relaciju preferencije u formatu:
+Osim relacija klasične logike, moguće je preferirati tvrdnje (PA-čvor) u formatu:
 \lstset{language=XML}
 \begin{lstlisting}[caption={},label={lst:format},language=XML, captionpos=b]
     [jedinstvena oznaka pravila a] < [jedinstvena oznaka preferiranog pravila b] 
 \end{lstlisting}
-TOAST je u potpunosti integriran s AIFdb (više u odjeljku~\ref{sec:aifdb}), pa je 
-tako moguće identificirane i povezane argumente evaluirati kroz TOAST. 
+Primjeri korištenja TOAST-a vidljivi su na slikama~\ref{fig:toast_in} i~\ref{fig:toast}.
+TOAST je u potpunosti integriran s AIFdb (više u odjeljku~\ref{sec:aifdb}), stoga je 
+moguće argument kreiran u AIFdb-u evaluirati kroz TOAST.\@
+
+\begin{figure}
+    \includegraphics[scale=0.4]{toast_input.png}
+    \caption{Unos pravila i baze znanja u TOAST}
+\label{fig:toast_in}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[scale=0.4]{toast.png}
+    \caption{Evaluacija prihvatljivosti \emph{AccessDenied} upita}
+\label{fig:toast}
+\end{figure}
