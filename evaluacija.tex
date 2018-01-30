@@ -1,40 +1,64 @@
 Mogućnost analize nestrukturiranih rasprava pomoću
 računalnih alata uvelike pomaže stručnjacima prilikom 
-vrednovanja argumentacije. No, ono što intrigira je 
-mogućnost računalne evaluacije argumentacije. 
+vrednovanja argumentacije. 
 Stručnjaci obrazovani u području argumentacije znaju prepoznati
 koje su prikladne logičke veze između tvrdnji.   
-Stručnjaci koji se bave argumentacijom \emph{neće} reći da iz tvrdnje
-\emph{Student Ivo danas nije došao na fakultet} slijedi
-tvrdnja \emph{Student Ivo nije položio niti jedan predmet}.
-Povezivanje argumenata logičkim vezama upravo je
-razlog nastanka računalne argumentacije. 
+Stručnjaci koji se bave argumentacijom \textbf{\emph{neće reći da iz tvrdnje}}
+\emph{Student Ivo danas nije došao na fakultet} \textbf{\emph{slijedi tvrdnja}}
+\emph{Student Ivo nije položio niti jedan predmet}, već \textbf{\emph{će 
+indukcijom zaključiti}} kako
+\emph{Student Ivo danas nije bio na fakultetu}. 
+No, ono što intrigira je 
+mogućnost računalne evaluacije argumentacije. 
 Automatizacijom izvođenja zaključaka u argumentaciji,
-moguće je doći do novih, neizrečenih tvrdnji.
-Računalni sustavi za zaključivanje u argumentaciji zovu se 
+moguće je doći do novih, neizrečenih tvrdnji te 
+dobiti \textbf{skupove prihvatljivih argumenata} \engl{acceptable arguments}. 
+Za gore naveden primjer argumenti \emph{Student Ivo danas nije došao na fakultet}
+i \emph{Student Ivo danas nije bio na fakultetu} 
+formiraju skup prihvaljivih argumenata jer su povezani 
+zaključivanjem.  
+Računalni sustavi za zaključivanje 
+i evaluaciju argumenata u argumentaciji zovu se 
 \textbf{argumentacijska radna okruženja} \engl{argumentation framework}, \@{AF}.
 
 Kao što je spomenuto u odjeljku~\ref{chap:rac_arg},
 \cite{dung1995acceptability} se prvi bavio 
-prihvatljivošću argumenata \engl{argument acceptability} 
+evaluacijom argumenata analizirajući prihvatljivost argumenata 
 kroz nededuktivnu (primjerice induktivnu ili oborivu) logiku.
-Odlučio se za takvu logiku jer je primjetio da se ljudi u svakodnevnom 
-govoru ne služe izjavama prikladnima za zaključivanje u formalnoj logici. 
-Tako se ljudi u svakodnevnom govoru služe analogijama i induktivnom zaključivanju, 
-primjerice: izjava \emph{Student Ivo je položio skoro sve predmete na doktorskom studiju} 
+Dungov argumentacijski model povezuje argumente \textbf{binarnim relacijama
+napadanja} pravilima nededuktivne logike. 
+Koristi se nededuktivna logika zbog njene učestalosti u svakodnevnom 
+govoru.  
+U svakodnevnom razgovoru ljudi su skloni analogijama i induktivnom zaključivanju, 
+primjerice izjava \emph{Student Ivo je položio skoro sve predmete na doktorskom studiju} 
 ima za logičku posljedicu \emph{Student Ivo će položiti PZUIS, predmet na doktorskom studiju}. 
 Dakako, ova izjava nije valjana prema formalnoj logici, oblikovana je
-induktivnim argumentom analogije koji se često koristi u svakodnevnom govoru 
+induktivnim argumentom analogije
 \citep{juthe2005argument}.
+Dung ne pretpostavlja strukturu argumenata, tipove argumenata kao ni
+vrste binarnih relacija,  
+što čini njegov model iznimno \textbf{apstraktnim}. 
+Nakon Dungova rada, razvijena 
+su argumentativna radna okruženja koja su proširila Dungov model.
+Dungov apstraktni model se specijalizirao 
+strukturiranjem argumenata  
+te specijalizacijom 
+vrsta binarnih relacija između argumenata \citep{vreeswijk1993feasibility}. 
 
-U sklopu razvoja argument web-a, razvijeno je nekoliko sustava za
-automatsku evaluaciju argumentacije, kao i argumentativnih radnih okruženja
-zasnovanih na Dungovoj ideji. Najkorištenije argumentacijsko radno okruženje
-je \textbf{ASPIC+} okruženje. 
+Najkorištenije argumentacijsko radno okruženje
+je \textbf{ASPIC+} okruženje\footnote{
+    ASPIC+ okruženje razvilo se iz jednostavnog proširenja Dungovog modela -- 
+    ASPIC okruženja 
+    \engl{Argumentation service platform with integrated components}
+    nastalog u sklopu Europskog projekta ASPIC po kojem je dobio 
+    (pomalo neprikladno) ime. ASPIC se značajno razvio kroz brojna
+    proširenja, od kojih je najznačajnije ASPIC+. 
+}.
 Prvi računalni sustav, implementacija argumentacijskog radnog okruženja, 
 je \emph{Dung-O-Matic} \citep{snaith2010pipelining},
 no taj sustav nije kompatibilan s ostalim formatima zapisa argumenta. 
-\emph{TOAST} sustav razvijen je s funkcionalnostima Dung-O-Matic-a, ali 
+\emph{TOAST} \engl{The Online Argument Structures Tool} 
+sustav razvijen je s funkcionalnostima Dung-O-Matic-a, ali 
 je kompatibilan s popularnim AIF formatom (poglavlje~\ref{chap:aif}), kao i sa 
 ASPIC+ argumentacijskim radnim okruženjem. 
 Postoje još brojni drugi sustavi kao što su Tweety \citep{thimm2014tweety} koji
@@ -43,19 +67,34 @@ pokušava mapirati AIF strukturu u logički program
 ArgSemSAT \citep{cerutti2014argsemsat}
 koji koristi poznatu SAT \citep{moskewicz2001chaff}
  tehniku kako bi odredio prihvatljivost argumenta
-u argumentacijskom radnom okruženju.
+u argumentacijskom radnom okruženju. U sljedećim odjeljcima
+pobliže će se opisati ASPIC+ radno okruženje i 
+ASPIC+ računalna implementacija TOAST sustav.
 
 \section{ASPIC+}
 \label{sec:aspic}
 
-$AF$ je par $(A, D)$ gdje je $D \subseteq A \times A$ binarna relacija napada između argumenata $A$. 
+ASPIC+ je radno okruženje nastalo iz Dungovog modela, s razlikom da
+ASPIC+ opisuje logička pravila zaključivanja, u što Dungov model ne ulazi detaljno. 
+Grubo gledano, ulaz ASPIC+ sustavu su 
+skup argumenata i relacije između tih argumenata
+koje ASPIC+ grupira u  
+ skupove prihvatljivih argumenata. Korisnici potom mogu
+raditi upite nad radnom okolinom kojima primjerice mogu
+provjeravati koji su argumenti međusobno prihvatljivi. 
+
+Definicija argumentacijskog radnog okruženja (\emph{AF}) istovjetna je za 
+Dungov i ASPIC+ model. 
+$AF$ je par $(A, D)$ gdje je $D \subseteq A \times A$ binarna relacija napada \engl{attack}
+između argumenata $A$. 
 Kažemo da $A$ napada $B$ ukoliko $A$ napada $B$ i $B$ ne napada $A$. $A$ 
 predstavlja skupove argumenata, proširenja \engl{extensions}
 koji su koherentni i brane se od napada. 
 Za svaki $X \in A$, $X$ je prihvatljiv s obzirom na $S \subseteq A$ akko
 $\forall Y$ takav da $(Y, X) \in C$ implicira $\exists Z \in S$ takav da
 $(Z, Y) \in D$. Ako je $S \subseteq A$ bez konflikta \engl{conflict free}, što znači 
-da ne postoje $A \in S, B \in S$ takvi da postoji $(A, B) \in D$ onda:
+da ne postoje $A \in S, B \in S$ takvi da postoji $(A, B) \in D$ onda za S vrijedi
+jedno od idućeg:
 \begin{itemize}
     \item S je \emph{prihvatljivo} proširenje akko $X \in S$ implicira prihvatljiv $X$ prema $S$;
     \item S je \emph{kompletno} proširenje akko $X \in S$ akko je $X$ prihvatljiv prema $S$;
